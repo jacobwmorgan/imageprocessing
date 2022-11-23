@@ -1,9 +1,19 @@
+
+
+
+
+
+
+
+
+
+
 % MATLAB script for Assessment 1
 % Task 1: Preprocessing ---------------------------
 clear; close all; clc;
 
 % Step-1: Load input image
-I = imread('IMG_01.jpg');
+I = imread('Images/IMG_01.JPG');
 figure;
 imshow(I);
 title('Step-1: Load input image');
