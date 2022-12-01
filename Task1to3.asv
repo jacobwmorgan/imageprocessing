@@ -1,0 +1,74 @@
+
+
+
+
+
+
+
+
+
+
+% MATLAB script for Assessment 1
+% Task 1: Preprocessing ---------------------------
+clear; close all; clc;
+
+% Step-1: Load input image
+I = imread('Images/IMG_01.JPG');
+task11 = figure(1);
+imshow(I);
+title('Step-1: Load input image');
+hold;
+
+% Step-2: Conversion of input image to grey-scale image
+Igray = rgb2gray(I);
+task12 = figure(2);
+imshow(Igray);
+title('Step-2: Conversion of Input image to grey-scale image');
+size(Igray)
+hold;
+
+% Step-3: Resizing the grayscale image using bilinear interpolation
+
+
+Igraybi = imresize(Igray,0.5,"bilinear");
+task13 = figure(3);
+
+imshow(Igraybi);
+title('Step-3: Resizing the grayscale image using bilinear interpolation');
+size(Igraybi)
+hold;
+
+% Step-4: Generating histogram for the resized image
+task14 = figure(4);
+h = histogram(Igraybi,20);
+h
+title('Step-4: Generating histogram for the resized image');
+hold;
+%histogram drops off at around 150. so we do 150/255 = 0.5888
+
+
+threshold = double(150/255);
+
+% Step-5: Producing binarised image
+
+BW = imbinarize(Igraybi,threshold);
+task15 = figure(5);
+imshow(BW);
+title('Step-5: Producing binarised image');
+hold;
+
+
+
+
+
+%---------------------------------------------------------------
+% Task 2: Edge Detection -----------------------
+
+
+
+%---------------------------------------------------------------
+% Task-3: Simple Segmentation -----------------------
+
+
+
+
